@@ -7,11 +7,7 @@
          <parameter key="collection" value="onms-discourse-stats"/>
          <parameter key="handler-class" value="org.opennms.protocols.json.collector.DefaultJsonCollectionHandler"/>
       </service>
-
    </package>
-
    <collector service="ONMS-Discourse-Stats" class-name="org.opennms.protocols.xml.collector.XmlCollector"/>
-
-
 </collectd-configuration>
 

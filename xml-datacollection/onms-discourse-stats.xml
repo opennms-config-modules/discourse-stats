@@ -1,18 +1,18 @@
 <xml-groups>
     <xml-group name="onms-discourse-stats" resource-type="node" resource-xpath="/about/stats">
-        <xml-object name="topicCount" type="GAUGE" xpath="topic_count"/>
-        <xml-object name="postCount" type="GAUGE" xpath="post_count"/>
-        <xml-object name="userCount" type="GAUGE" xpath="user_count"/>
-        <xml-object name="topic7Day" type="GAUGE" xpath="topics_7_days"/>
-        <xml-object name="topic30Day" type="GAUGE" xpath="topics_30_days"/>
-        <xml-object name="posts7Day" type="GAUGE" xpath="posts_7_days"/>
-        <xml-object name="posts30Day" type="GAUGE" xpath="posts_30_days"/>
-        <xml-object name="users7Day" type="GAUGE" xpath="users_7_days"/>
-        <xml-object name="users30Day" type="GAUGE" xpath="users_30_days"/>
-        <xml-object name="actUsers7Day" type="GAUGE" xpath="active_users_7_days"/>
+        <xml-object name="topicCount"    type="GAUGE" xpath="topic_count"/>
+        <xml-object name="postCount"     type="GAUGE" xpath="post_count"/>
+        <xml-object name="userCount"     type="GAUGE" xpath="user_count"/>
+        <xml-object name="topic7Day"     type="GAUGE" xpath="topics_7_days"/>
+        <xml-object name="topic30Day"    type="GAUGE" xpath="topics_30_days"/>
+        <xml-object name="posts7Day"     type="GAUGE" xpath="posts_7_days"/>
+        <xml-object name="posts30Day"    type="GAUGE" xpath="posts_30_days"/>
+        <xml-object name="users7Day"     type="GAUGE" xpath="users_7_days"/>
+        <xml-object name="users30Day"    type="GAUGE" xpath="users_30_days"/>
+        <xml-object name="actUsers7Day"  type="GAUGE" xpath="active_users_7_days"/>
         <xml-object name="actUsers30Day" type="GAUGE" xpath="active_users_30_days"/>
-        <xml-object name="likeCount" type="GAUGE" xpath="like_count"/>
-        <xml-object name="likes7Days" type="GAUGE" xpath="likes_7_days"/>
-        <xml-object name="likes30Days" type="GAUGE" xpath="likes_30_days"/>
+        <xml-object name="likeCount"     type="GAUGE" xpath="like_count"/>
+        <xml-object name="likes7Days"    type="GAUGE" xpath="likes_7_days"/>
+        <xml-object name="likes30Days"   type="GAUGE" xpath="likes_30_days"/>
     </xml-group>
 </xml-groups>
