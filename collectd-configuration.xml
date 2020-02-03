@@ -1,0 +1,17 @@
+<collectd-configuration xmlns="http://xmlns.opennms.org/xsd/config/collectd" threads="30">
+   <package name="default" remote="false">
+      <filter>IPADDR != '0.0.0.0'</filter>
+      <include-range begin="1.1.1.1" end="254.254.254.254"/>
+      <include-range begin="::1" end="ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff"/>
+      <service name="ONMS-Discourse-Stats" interval="300000" user-defined="false" status="on">
+         <parameter key="collection" value="onms-discourse-stats"/>
+         <parameter key="handler-class" value="org.opennms.protocols.json.collector.DefaultJsonCollectionHandler"/>
+      </service>
+
+   </package>
+
+   <collector service="ONMS-Discourse-Stats" class-name="org.opennms.protocols.xml.collector.XmlCollector"/>
+
+
+</collectd-configuration>
+
