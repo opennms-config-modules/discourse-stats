@@ -1,5 +1,5 @@
 <xml-groups>
-    <xml-group name="onms-discourse-stats" resource-type="node" resource-xpath="/about/stats">
+    <xml-group name="discourse-stats" resource-type="node" resource-xpath="/about/stats">
         <xml-object name="topicCount"    type="GAUGE" xpath="topic_count"/>
         <xml-object name="postCount"     type="GAUGE" xpath="post_count"/>
         <xml-object name="userCount"     type="GAUGE" xpath="user_count"/>
