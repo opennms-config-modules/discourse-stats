@@ -1,18 +1,19 @@
-<xml-datacollection-config rrdRepository="/opt/opennms/share/rrd/snmp/" xmlns="http://xmlns.opennms.org/xsd/config/xml-datacollection">
- <xml-collection name="discourse-stats">
-        <rrd step="300">
-            <rra>RRA:AVERAGE:0.5:1:2016</rra>
-            <rra>RRA:AVERAGE:0.5:12:1488</rra>
-            <rra>RRA:AVERAGE:0.5:288:366</rra>
-            <rra>RRA:MAX:0.5:288:366</rra>
-            <rra>RRA:MIN:0.5:288:366</rra>
-        </rrd>
-        <xml-source url="https://{nodeLabel}/about.json">
-    	 <request method="GET">
-          <parameter name="timeout" value="6000"/>
-          <parameter name="retries" value="2"/>
-         </request>
-         <import-groups>xml-datacollection/discourse-stats.xml</import-groups>
-        </xml-source>
- </xml-collection>
+<xml-datacollection-config rrdRepository="/opt/opennms/share/rrd/snmp/" 
+  xmlns="http://xmlns.opennms.org/xsd/config/xml-datacollection">
+  <xml-collection name="discourse-stats">
+    <rrd step="300">
+      <rra>RRA:AVERAGE:0.5:1:2016</rra>
+      <rra>RRA:AVERAGE:0.5:12:1488</rra>
+      <rra>RRA:AVERAGE:0.5:288:366</rra>
+      <rra>RRA:MAX:0.5:288:366</rra>
+      <rra>RRA:MIN:0.5:288:366</rra>
+    </rrd>
+    <xml-source url="https://{nodeLabel}/about.json">
+      <request method="GET">
+        <parameter name="timeout" value="6000"/>
+        <parameter name="retries" value="2"/>
+      </request>
+      <import-groups>xml-datacollection/discourse-stats.xml</import-groups>
+    </xml-source>
+  </xml-collection>
 </xml-datacollection-config>
