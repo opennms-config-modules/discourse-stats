@@ -1,0 +1,2586 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_OPENNMS_PERFORMANCE",
+      "label": "OpenNMS Performance",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "opennms-performance-datasource",
+      "pluginName": "OpenNMS Performance"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "bargauge",
+      "name": "Bar gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "10.1.4"
+    },
+    {
+      "type": "datasource",
+      "id": "opennms-performance-datasource",
+      "name": "OpenNMS Performance",
+      "version": "9"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 14,
+      "panels": [],
+      "title": "Discourse - Total",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              },
+              {
+                "color": "semi-dark-green",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 12,
+        "x": 0,
+        "y": 1
+      },
+      "id": 13,
+      "interval": "1",
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 11,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "valueMode": "text"
+      },
+      "pluginVersion": "10.1.4",
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "userCount",
+              "name": "userCount",
+              "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+              "rrdFile": "userCount.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "User Total",
+      "transformations": [],
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              },
+              {
+                "color": "semi-dark-green",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "helm"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 12,
+        "x": 12,
+        "y": 1
+      },
+      "id": 15,
+      "interval": "1",
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 11,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "valueMode": "text"
+      },
+      "pluginVersion": "10.1.4",
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "postCount",
+              "name": "postCount",
+              "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+              "rrdFile": "postCount.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "Posts Total",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              },
+              {
+                "color": "semi-dark-green",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "helm"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 12,
+        "x": 0,
+        "y": 18
+      },
+      "id": 2,
+      "interval": "1",
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 9,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "valueMode": "text"
+      },
+      "pluginVersion": "10.1.4",
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "likeCount",
+              "name": "likeCount",
+              "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+              "rrdFile": "likeCount.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "Likes Total",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              },
+              {
+                "color": "semi-dark-green",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "helm"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 12,
+        "x": 12,
+        "y": 18
+      },
+      "id": 16,
+      "interval": "1",
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 11,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "valueMode": "text"
+      },
+      "pluginVersion": "10.1.4",
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "topicCount",
+              "name": "topicCount",
+              "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+              "rrdFile": "topicCount.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "Topics Total",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "users",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "helm"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 24,
+        "x": 0,
+        "y": 35
+      },
+      "id": 8,
+      "interval": "1",
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.1.4",
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "userCount",
+              "name": "userCount",
+              "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+              "rrdFile": "userCount.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "User Total",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 49
+      },
+      "id": 6,
+      "panels": [],
+      "title": "Discourse - Sliding Window",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "users",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "log": 10,
+              "type": "log"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "horizon"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "icingaweb2"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "helm"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 0,
+        "y": 50
+      },
+      "id": 7,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "actUsers7Day",
+              "name": "actUsers7Day",
+              "relativePath": "snmp/fs/Discourse Sites/opennms.discourse.group",
+              "rrdFile": "actUsers7Day.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "Active Users: 7 Days",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "users",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "log": 10,
+              "type": "log"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "horizon"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "icingaweb2"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "helm"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 12,
+        "y": 50
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "actUsers30Day",
+              "name": "actUsers30Day",
+              "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+              "rrdFile": "actUsers30Day.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "Active Users: 30 Days",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "posts",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "log": 10,
+              "type": "log"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "horizon"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "icingaweb2"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "helm"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 0,
+        "y": 64
+      },
+      "id": 9,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "posts7Day",
+              "name": "posts7Day",
+              "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+              "rrdFile": "posts7Day.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "Posts: 7 Days",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "users",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "log": 10,
+              "type": "log"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "horizon"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "icingaweb2"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "helm"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 12,
+        "y": 64
+      },
+      "id": 10,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "posts30Day",
+              "name": "posts30Day",
+              "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+              "rrdFile": "posts30Day.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "Posts: 30 Days",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "likes",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "log": 10,
+              "type": "log"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "horizon"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "icingaweb2"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "helm"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 0,
+        "y": 78
+      },
+      "id": 11,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "likes7Days",
+              "name": "likes7Days",
+              "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+              "rrdFile": "likes7Days.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "Likes: 7 Days",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "opennms-performance-datasource",
+        "uid": "${DS_OPENNMS_PERFORMANCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "likes",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "log": 10,
+              "type": "log"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "horizon"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "icingaweb2"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "helm"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 12,
+        "y": 78
+      },
+      "id": 12,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "attribute": {
+            "attribute": {
+              "label": "likes30Days",
+              "name": "likes30Days",
+              "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+              "rrdFile": "likes30Days.rrd"
+            },
+            "label": "$discourse_instance",
+            "node": {
+              "label": "$discourse_instance",
+              "value": "$discourse_instance"
+            },
+            "resource": {
+              "children": {
+                "offset": 0,
+                "resource": []
+              },
+              "externalValueAttributes": {},
+              "id": "nodeSnmp[]",
+              "label": "Node-level Performance Data",
+              "name": "",
+              "parentId": "node[Discourse Sites:community.datagerry.com]",
+              "rrdGraphAttributes": {
+                "actUsers30Day": {
+                  "name": "actUsers30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers30Day.rrd"
+                },
+                "actUsers7Day": {
+                  "name": "actUsers7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "actUsers7Day.rrd"
+                },
+                "likeCount": {
+                  "name": "likeCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likeCount.rrd"
+                },
+                "likes30Days": {
+                  "name": "likes30Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes30Days.rrd"
+                },
+                "likes7Days": {
+                  "name": "likes7Days",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "likes7Days.rrd"
+                },
+                "postCount": {
+                  "name": "postCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "postCount.rrd"
+                },
+                "posts30Day": {
+                  "name": "posts30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts30Day.rrd"
+                },
+                "posts7Day": {
+                  "name": "posts7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "posts7Day.rrd"
+                },
+                "topic30Day": {
+                  "name": "topic30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic30Day.rrd"
+                },
+                "topic7Day": {
+                  "name": "topic7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topic7Day.rrd"
+                },
+                "topicCount": {
+                  "name": "topicCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "topicCount.rrd"
+                },
+                "userCount": {
+                  "name": "userCount",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "userCount.rrd"
+                },
+                "users30Day": {
+                  "name": "users30Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users30Day.rrd"
+                },
+                "users7Day": {
+                  "name": "users7Day",
+                  "relativePath": "snmp/fs/Discourse Sites/community.datagerry.com",
+                  "rrdFile": "users7Day.rrd"
+                }
+              },
+              "stringPropertyAttributes": {},
+              "typeLabel": "SNMP Node Data"
+            }
+          },
+          "datasource": {
+            "type": "opennms-performance-datasource",
+            "uid": "${DS_OPENNMS_PERFORMANCE}"
+          },
+          "performanceType": {
+            "label": "Attribute",
+            "value": 1
+          },
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "180d",
+      "title": "Likes: 30 Days",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "datasource": {
+          "type": "opennms-performance-datasource",
+          "uid": "${DS_OPENNMS_PERFORMANCE}"
+        },
+        "definition": "nodeFilter(isDiscourse-Stats)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Discourse",
+        "multi": true,
+        "name": "discourse_instance",
+        "options": [],
+        "query": "nodeFilter(isDiscourse-Stats)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1y",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Discourse Statistics",
+  "uid": "d9e254c1-21ae-4bb0-8eb1-bf87cd5475ac",
+  "version": 21,
+  "weekStart": ""
+}
